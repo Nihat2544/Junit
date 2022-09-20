@@ -54,7 +54,9 @@ public class Odev2 {
         // 6. Pay Bills sayfasina gidin
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id='details-button']")).click();
+        driver.navigate().back();
         // 7. amount kismina yatirmak istediginiz herhangi bir miktari yazin
+        
         // 8. tarih kismina “2020-09-10” yazdirin
         // 9. Pay buttonuna tiklayin
         // 10. “The payment was successfully submitted.” mesajinin ciktigini control edin

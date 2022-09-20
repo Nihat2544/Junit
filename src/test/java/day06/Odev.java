@@ -33,13 +33,16 @@ bastigimizda “Invalid email address” uyarisi ciktigini test edelim
         //driver.close();
     }
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         // 1.Bir Class olusturalimYanlisEmailTesti
         // 2.http://automationpractice.com/index.php sayfasinagidelim
         driver.get("http://automationpractice.com/index.php");
         // 3.Sign in butonunabasalim
         driver.findElement(By.xpath("//*[@class='login']")).click();
         // 4.Email kutusuna @isareti olmayan bir mail yazipenter'a
+        driver.findElement(By.xpath("//*[@id='email_create']")).sendKeys("nht.gmail.com");
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@class='icon-user left']")).click();
 
     }
 }
