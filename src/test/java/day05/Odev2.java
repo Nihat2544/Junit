@@ -2,6 +2,7 @@ package day05;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -55,14 +56,29 @@ public class Odev2 {
         Thread.sleep(1500);
         driver.findElement(By.xpath("//*[@id='details-button']")).click();
         driver.navigate().back();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id='transfer_funds_link']")).click();
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[text()='Pay Bills']")).click();
         // 7. amount kismina yatirmak istediginiz herhangi bir miktari yazin
-        
+        Thread.sleep(1500);
+        WebElement amount = driver.findElement(By.xpath("//*[@id='sp_amount']"));
+        amount.sendKeys("15");
         // 8. tarih kismina “2020-09-10” yazdirin
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id='sp_date']")).sendKeys("2020-09-10");
         // 9. Pay buttonuna tiklayin
+        Thread.sleep(1500);
+        driver.findElement(By.xpath("//*[@id='pay_saved_payees']")).click();
         // 10. “The payment was successfully submitted.” mesajinin ciktigini control edin
+        WebElement mesaj = driver.findElement(By.xpath("//*[@id='alert_content']"));
+        Assert.assertTrue(mesaj.isDisplayed());
+
+
     }
     @After
-    public void tearDown(){
-       // driver.close();
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(5000);
+        driver.close();
     }
 }
