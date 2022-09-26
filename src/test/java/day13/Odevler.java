@@ -2,7 +2,7 @@ package day13;
 
 public class Odevler {
     /*
-    Bir metod oluşturun : printData(int row, int column);
+Bir metod oluşturun : printData(int row, int column);
 Satır(row) ve sütun(column) numarasını girdiğinizde, printData metodu bu
 hücredeki(cell) veriyi yazdırmalıdır.
 Baska bir Test metodu oluşturun: printDataTest( );
@@ -12,7 +12,7 @@ yazdirilan datanin olmasi gereken dataya esit oldugunu test edin
      */
 
     /*
-    Bir Class olusturun D19_WebtablesHomework
+ Bir Class olusturun D19_WebtablesHomework
 “https://demoqa.com/webtables” sayfasina gidin
 Headers da bulunan department isimlerini yazdirin
 sutunun basligini yazdirin

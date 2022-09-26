@@ -15,18 +15,18 @@ public class C02_WebTable extends TestBaseBeforeAfter {
 
         //login( ) metodun oluşturun ve oturum açın.
 
-          //      https://www.hotelmycamp.com/admin/HotelRoomAdmin adresine gidin
-       // driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin ");
+        //      https://www.hotelmycamp.com/admin/HotelRoomAdmin adresine gidin
+        // driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin ");
         login();
         //Username : manager
         //Password : Manager1!
-         //       table( ) metodu oluşturun
+        //       table( ) metodu oluşturun
         table();
         //Tüm table body’sinin boyutunu(sutun sayisi) bulun.
-         //       Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
+        //       Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         //printRows( ) metodu oluşturun //tr
         //table body’sinde bulunan toplam satir(row) sayısını bulun.
-         //       Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
+        //       Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
 
 
     }
@@ -42,12 +42,13 @@ public class C02_WebTable extends TestBaseBeforeAfter {
          */
         List<WebElement> sutunSayisi = driver.findElements(By.xpath("//thead//tr//th"));
         System.out.println("Sutun Sayisi --> " + sutunSayisi.size());
-      //  sutunSayisi.stream().map(WebElement::getText).forEach(System.out::println);
+        //  sutunSayisi.stream().map(WebElement::getText).forEach(System.out::println);
         //Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         WebElement basliklar = driver.findElement(By.xpath("//thead//tr"));
         System.out.println("basliklar : " + basliklar.getText());
         WebElement body = driver.findElement(By.xpath("//tbody"));
         System.out.println(body.getText());
+
         //printRows( ) metodu oluşturun //tr
         //table body’sinde bulunan toplam satir(row) sayısını bulun.
         List<WebElement> satirSayisi = driver.findElements(By.xpath("//tbody//tr"));
@@ -67,5 +68,7 @@ public class C02_WebTable extends TestBaseBeforeAfter {
         actions.click(username).sendKeys("manager").sendKeys(Keys.TAB).
                 sendKeys("Manager1!").sendKeys(Keys.ENTER).perform();
 
+
     }
 }
+
