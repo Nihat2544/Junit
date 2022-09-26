@@ -27,6 +27,8 @@ public class C02_WriteExcel {
         workbook.getSheet("sayfa1").getRow(9).createCell(4).setCellValue(250000 );
 // 8) 15.satir nufus kolonuna 54000 yazdiralim
         workbook.getSheet("sayfa1").getRow(14).createCell(4).setCellValue(54000 );
+        //-3. Satır 3. Cell'deki veriyi Cezayir olarak yazin
+        workbook.getSheet("sayfa1").getRow(3).createCell(3).setCellValue("Cezayir" );
 // 9)Dosyayi kaydedelim
         FileOutputStream  fos = new FileOutputStream(dosyaYolu);
         //Excel dosyamıza veri girisi yaptiktan sonra dosyayi akısa aldigimiz gibi sonlandirmamiz gerekir.

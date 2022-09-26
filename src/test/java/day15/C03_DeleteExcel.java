@@ -1,9 +1,11 @@
 package day15;
 
 import org.apache.poi.ss.usermodel.*;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class C03_DeleteExcel {
@@ -24,6 +26,20 @@ public class C03_DeleteExcel {
         Cell cell = row.getCell(3);//Satir secimi yapildiktan sonra hucre secimi bu sekilde yapilir.
         System.out.println(cell);
         //-3. Satır 3. Cell'deki veriyi silelim
+        row.removeCell(cell);
+        /*
+        Bir cell'deki veriyi silmek icin row objesine ihtiyac vardir
+        row objesi ile removeCell() methodunu kullanarak cell objesi ile belirttigimiz
+        cell degerini silebiliriz
+         */
+    FileOutputStream fos = new FileOutputStream(dosyaYolu);
+    workbook.write(fos);
+        fos.close();
+        fis.close();
+        workbook.close();
         //-Silindiğini test edin
+        String expectedData = "Cezayir";
+        String actualData = null;
+        Assert.assertNotEquals(expectedData,actualData);
     }
 }
