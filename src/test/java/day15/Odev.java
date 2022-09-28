@@ -1,7 +1,6 @@
 package day15;
 
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
@@ -26,7 +25,14 @@ Ingilizce Ulke isimleri ve baskentleri bir map olarak kaydedelim
         FileInputStream fis = new FileInputStream(dosyaYolu);
         Workbook workbook = WorkbookFactory.create(fis);
         //1.satirdaki 2.hucreye gidelim ve yazdiralim
-        System.out.println(workbook.getSheet("sayfa1").getRow(0).createCell(1));
+        Sheet sheet = workbook.getSheet("sayfa1");
+        Row row = sheet.getRow(0);
+        Cell cell = row.getCell(1);
+        System.out.println(cell);
+        //System.out.println(workbook.getSheet("sayfa1").getRow(0).createCell(1));
+
+        //2.satir 4.cell’in afganistan’in baskenti oldugunu test edelim
+        Sheet sheet1 = workbook.getSheet("sayfa1");
 
 
     }
